@@ -16,8 +16,6 @@ const services = require('./services');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
-const mongodb = require('./mongodb');
-
 const mongoose = require('./mongoose');
 
 const app = express(feathers());
@@ -36,9 +34,6 @@ app.use('/', express.static(app.get('public')));
 
 // Set up Plugins and providers
 app.configure(express.rest());
-
-
-app.configure(mongodb);
 
 
 app.configure(mongoose);
